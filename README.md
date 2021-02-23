@@ -1,5 +1,6 @@
 # Pi-PCL
 [中文](./README_cn.md)
+
 pipcl is a point cloud processing tool based on PCL
 
 ## Description
@@ -43,7 +44,7 @@ Transfer secondary point cloud
 * `:=`
 Mix and transfer point clouds
 
-### View the help information of pipcl
+### Help information
 ```
 ./pipcl help
 
