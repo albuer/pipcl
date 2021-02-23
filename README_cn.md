@@ -1,5 +1,6 @@
 # Pi-PCL
 [English](./README.md)
+
 pipcl是一个基于PCL的点云处理工具
 
 ## 描述
@@ -43,7 +44,7 @@ make
 * `:=`
 将点云混合再传递
 
-### 查看pipcl的帮助信息
+### 查看帮助信息
 ```
 ./pipcl help
 
