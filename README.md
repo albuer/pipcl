@@ -60,30 +60,30 @@ All action class are:
   registration
   misc
 
-See'./pipcl help ActionClass' for more information on a specific action.
+See'./pipcl help [ActionClass]' for more information on a specific action.
 ```
 
 ### Some examples
 
 * File format conversion
 ```
-./pipcl source=input.pcd: sink=output.ply
+./pipcl source=input.pcd : sink=output.ply
 ```
 
 * Display point cloud
 ```
-./pipcl source=input.pcd: sink=VIS
+./pipcl source=input.pcd : sink=VIS
 ```
 
 * Generate point clouds of geometric shapes
 ```
-./pipcl source=line point1=0,0,0 point2=1,1,1: sink=VIS
-./pipcl source=cube xrange=-1,1 yrange=-2,2 zrange=-3,3 density=2: sink=output.pcd
+./pipcl source=line point1=0,0,0 point2=1,1,1 : sink=VIS
+./pipcl source=cube xrange=-1,1 yrange=-2,2 zrange=-3,3 density=2 : sink=output.pcd
 ```
 
 * Filter
 ```
-./pipcl source=input.pcd: filter=voxelgrid leaf=0.01: sink=output.pcd
+./pipcl source=input.pcd : filter=voxelgrid leaf=0.01 : sink=output.pcd
 ```
 
 * The input multiple point clouds are mixed and output to a file
@@ -93,15 +93,15 @@ See'./pipcl help ActionClass' for more information on a specific action.
 
 * The input point cloud is divided after downsampling, and the divided point cloud is saved to out1.pcd, and the point cloud discarded after the division is saved to out2.pcd after kdtree search
 ```
-./pipcl source=input.pcd: filter=VoxelGrid leaf=0.01: segmentation=SAC model=plane threshold=0.01 iterations=1000 :+ sink=out1.pcd :- search=kdtree: sink=out2.pcd
+./pipcl source=input.pcd : filter=VoxelGrid leaf=0.01 : segmentation=SAC model=plane threshold=0.01 iterations=1000 :+ sink=out1.pcd :- search=kdtree : sink=out2.pcd
 ```
 
 * Use ICP to register multiple input point clouds
 ```
-./pipcl source=in-1.pcd,in-2.pcd,in-3.pcd,in-4.pcd: registration=icp dist=0.05 rans=0.05: sink=out.pcd
+./pipcl source=in-1.pcd,in-2.pcd,in-3.pcd,in-4.pcd : registration=icp dist=0.05 rans=0.05 : sink=out.pcd
 ```
 
 * Use passthrough filtering for in-1.pcd, kdtree search for in-2.pcd, and finally mix in-3.pcd with the two processed point clouds before output to a file
 ```
-./pipcl source=in-1.pcd: filter=passthrough: source=in-2.pcd: search=kdtree: source=in-3.pcd := sink=out.pcd
+./pipcl source=in-1.pcd : filter=passthrough : source=in-2.pcd : search=kdtre e: source=in-3.pcd := sink=out.pcd
 ```
